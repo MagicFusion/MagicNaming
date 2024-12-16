@@ -1,0 +1,1 @@
+# MagicNaming.github.io
