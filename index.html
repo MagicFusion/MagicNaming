@@ -1,0 +1,120 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>MagicFusion</title>
+  </head>
+  <body>
+    <div style="padding: 2rem 0; background-color: #fff;">
+<!--       <h1 style="text-align: center;">MagicFusion</h1> -->
+<!--       <h1 style="text-align: center;"><img style="width: 15%" src='./static/logo.png'></h1>  -->
+      <h2 style="text-align: center;">MagicNaming: Consistent Identity Generation by Finding a ``Name Space'' </h2>
+      <h2 style="text-align: center;">in T2I Diffusion Models (AAAI 2025)</h2>
+      <h2 style="text-align: center;">Accepted by AAAI 2025</h2>
+    </div>
+    
+    
+    
+<!--     <div class="container" style="max-width: 840px;">
+                <div class="row">
+                    <div class="col-md author"><a href="https://chenhsuanlin.bitbucket.io/" target="_blank">Chen-Hsuan Lin</a>*</div>
+                    <div class="col-md author"><a href="https://www.cs.toronto.edu/~jungao/" target="_blank">Jun Gao</a>*</div>
+                    <div class="col-md author"><a href="http://lumingtang.info" target="_blank">Luming Tang</a>*</div>
+                    <div class="col-md author"><a href="https://tovacinni.github.io" target="_blank">Towaki Takikawa</a>*</div>
+                    <div class="col-md author"><a href="https://www.cs.utoronto.ca/~xiaohui/" target="_blank">Xiaohui Zeng</a>*</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md author"><a href="https://xunhuang.me" target="_blank">Xun Huang</a></div>
+                    <div class="col-md author"><a href="https://karstenkreis.github.io/" target="_blank">Karsten Kreis</a></div>
+                    <div class="col-md author"><a href="https://www.cs.utoronto.ca/~fidler/" target="_blank">Sanja Fidler</a><sup>†</sup></div>
+                    <div class="col-md author"><a href="http://mingyuliu.net/" target="_blank">Ming-Yu Liu</a><sup>†</sup></div>
+                    <div class="col-md author"><a href="https://tsungyilin.info" target="_blank">Tsung-Yi Lin</a></div>
+                </div>
+
+                <div class="row" style="margin-top:0.5rem; margin-left: auto; margin-right: auto;">
+                    <div class="col-md">
+                        <h9>*<sup>†</sup> : equal contributions</h9>
+                        <div id="affiliation">NVIDIA Corporation</div>
+                    </div>
+                </div>
+    </div>
+ -->
+    <div class="authors">
+      <p style="padding-bottom: 5px;">Jing Zhao<sup>1</sup> , Heliang Zheng<sup>2</sup>, Chaoyue Wang<sup>3</sup>, Long Lan<sup>1</sup>,Wanrong Huang<sup>1</sup>, Yuhua Tang<sup>1†</sup></p>
+      <p class="smaller">National University of Defense Technology<sup>1</sup>; University of Science and Technology of China<sup>2</sup>; University of Sydney<sup>3</sup></p> 
+    </div> 
+    <div align="center" style="text-align: center; padding: 20px 100px; background-color: #fff;">
+<!--       <embed src="./static/figure1_final.pdf" type="application/pdf" width="100%" height="100%" internalinstanceid="81 /> -->
+      <object type="image/jpeg" data="./static/figure1.png" width=1200px height="100%" ></object>
+    </div>
+    
+    <div class="authors" style="text-align: center!important; font-family: 'Noto Sans', sans-serif; margin:30px">
+      <span class="link-block" style="font-style: inherit;font-weight: inherit;background-color: #dee2e6; padding: 10px 30px; border-radius: 25px;text-align: center;margin-right: 20px;">
+         <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="fas fa-book-reader"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+      </span>
+      <span class="link-block" style="font-style: inherit;font-weight: inherit;background-color: #dee2e6; padding: 10px 30px; border-radius: 25px;text-align: center;">
+                <a href="https://github.com/MagicFusion/MagicNaming.github.io" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+    </div>
+   
+
+    <!-- <div class="topgallery">
+      <div class="input-output">
+        <img src="./static/srn_shapenet/cars_6_cond.png">
+        <span>&#8594</span>
+        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/cars_6_hyp.mp4"></video>
+      </div>
+      <div class="input-output">
+        <img src="./static/srn_shapenet/chairs_17_cond.png">
+        <span>&#8594</span>
+        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/chairs_17_hyp.mp4"></video>
+      </div>
+      <div class="input-output">
+        <img src="./static/srn_shapenet/cars_42_cond.png">
+        <span>&#8594</span>
+        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/cars_42_hyp.mp4"></video>
+      </div>
+      <div class="input-output">
+        <img src="./static/srn_shapenet/chairs_121_cond.png">
+        <span>&#8594</span>
+        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/chairs_121_hyp.mp4"></video>
+      </div>
+    </div> -->
+
+    <div class="abstract">
+      <div class="inside">
+        <h3 style="text-align: center;">Abstract</h2>
+        <p class="text">
+Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of generating famous persons by simply referring to their names. \textbf{\textit{Is it possible to make such models generate generic identities as simple as the famous ones, e.g., just use a name?}} In this paper, we explore the existence of a ``Name Space'', where any point in the space corresponds to a specific identity. Fortunately, we find some clues in the feature space spanned by text embedding of celebrities' names. Specifically, we first extract the embeddings of celebrities' names in the Laion5B dataset with the text encoder of diffusion models. Such embeddings are used as supervision to learn an encoder that can predict the name (actually an embedding) of a given face image. We experimentally find that such name embeddings work well in promising the generated image with good identity consistency. Note that like the names of celebrities, our predicted name embeddings are disentangled from the semantics of text inputs, making the original generation capability of text-to-image models well-preserved. Moreover, by simply plugging such name embeddings, all variants (e.g., from Civitai) derived from the same base model (i.e., SDXL) readily become identity-aware text-to-image models.        </p>
+<!--         <br>
+        <br> 
+        <a class="read-paper" href="https://arxiv.org/pdf/2211.14108.pdf" target="_blank"><button>Research Paper</button></a>   -->
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
