@@ -59,7 +59,7 @@
     </div> 
     <div align="center" style="text-align: center; padding: 20px 100px; background-color: #fff;">
 <!--       <embed src="./static/figure1_final.pdf" type="application/pdf" width="100%" height="100%" internalinstanceid="81 /> -->
-      <object type="image/jpeg" data="./static/figure1.png" width=1200px height="100%" ></object>
+      <object type="image/jpeg" data="./static/first_page.pdf" width=1200px height="100%" ></object>
     </div>
     
     <div class="authors" style="text-align: center!important; font-family: 'Noto Sans', sans-serif; margin:30px">
@@ -111,12 +111,107 @@
       <div class="inside">
         <h3 style="text-align: center;">Abstract</h2>
         <p class="text">
-Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of generating famous persons by simply referring to their names. \textbf{\textit{Is it possible to make such models generate generic identities as simple as the famous ones, e.g., just use a name?}} In this paper, we explore the existence of a ``Name Space'', where any point in the space corresponds to a specific identity. Fortunately, we find some clues in the feature space spanned by text embedding of celebrities' names. Specifically, we first extract the embeddings of celebrities' names in the Laion5B dataset with the text encoder of diffusion models. Such embeddings are used as supervision to learn an encoder that can predict the name (actually an embedding) of a given face image. We experimentally find that such name embeddings work well in promising the generated image with good identity consistency. Note that like the names of celebrities, our predicted name embeddings are disentangled from the semantics of text inputs, making the original generation capability of text-to-image models well-preserved. Moreover, by simply plugging such name embeddings, all variants (e.g., from Civitai) derived from the same base model (i.e., SDXL) readily become identity-aware text-to-image models.        </p>
+Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of generating famous persons by simply referring to their names. Is it possible to make such models generate generic identities as simple as the famous ones, e.g., just use a name? In this paper, we explore the existence of a ``Name Space'', where any point in the space corresponds to a specific identity. Fortunately, we find some clues in the feature space spanned by text embedding of celebrities' names. Specifically, we first extract the embeddings of celebrities' names in the Laion5B dataset with the text encoder of diffusion models. Such embeddings are used as supervision to learn an encoder that can predict the name (actually an embedding) of a given face image. We experimentally find that such name embeddings work well in promising the generated image with good identity consistency. Note that like the names of celebrities, our predicted name embeddings are disentangled from the semantics of text inputs, making the original generation capability of text-to-image models well-preserved. Moreover, by simply plugging such name embeddings, all variants (e.g., from Civitai) derived from the same base model (i.e., SDXL) readily become identity-aware text-to-image models.        </p>
 <!--         <br>
         <br> 
         <a class="read-paper" href="https://arxiv.org/pdf/2211.14108.pdf" target="_blank"><button>Research Paper</button></a>   -->
       </div>
     </div>
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>Overview of the Proposed Method.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./static/first_page.pdf" width=1200px height="100%" ></object>
+        <p class="text">
+            Overview of the Proposed Method. 
+  (a) Dataset Construction. Celebrity images and their corresponding names were extracted from the Laion5b dataset, with name embeddings generated through a text encoder $$E_{text}$$ based on the names. 
+  (b) Image Encoder Architecture and Training. Features were extracted from input images using two CLIP image encoders, followed by a three-layer fully connected network to produce the ``name'' prediction. Mean Squared Error (MSE) loss was computed against the ground truth name embedding $$F_{ID}^{gt}$$. 
+  (c) Pipeline Inference. The name embedding predicted by the image encoders $$E_{image}$$ were combined with the original text embeddings by ``name'' Prepending ($$NP(\cdot)$$) to obtain final embeddings $$F_{prompt}^{ID}$$. These embeddings were then used to guide a U-net model for denoising. 
+  (d) ``Name'' Integrating. There is no need to set a specific placeholder or identify its position, simply inserting the name embedding between the start token(red block) 
+  and the first semantic token(blue block) is sufficient to achieve consistent identity generation. 
+  The padding tokens(yellow block) exceeding the length of 77 will be discarded. 
+        </p>
+    </div>
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>Visualization and Comparison.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./static/freamwokd2.pdf" width=1200px height="100%" ></object>
+        <p class="text">
+            Visualization and Comparison.The results concludes four tasks, i.e., scene construction, stylization, action control and emotional editing. 
+            Please devote attention to semantic consistency and visual aesthetics of images with the same level of concern as given to ID consistency.
+            The results demonstrate that our approach maintains ID consistency while perfectly preserving the original semantic performance (complex semantic consistency) of the generator(SDXL), a feat not achieved by other works.
+        </p>
+    </div>
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>Create Fictional Identities.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./static/chazhi.pdf" width=1200px height="100%" ></object>
+        <p class="text">
+            In the  $$\mathcal N$$  space, any given point corresponds to a person identity. For real individuals, we can obtain their mapping in the $$\mathcal N$$ space using the image encoder proposed and trained in this paper, thereby achieving consistent identity generation. Furthermore, by interpolating between any two points (i.e., name embedding) within the name space, we can create new fictional characters.
+        </p>
+    </div>
+
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>The necessity of constructing LaionCele datasets.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./static/dataset.pdf" width=1200px height="100%" ></object>
+        <p class="text">
+            The results indicate that, on one hand, even well-performing generative models like SDXL exhibit a significant gap between their image outputs and real images. On the other hand, the gap between real test images and generated training images also impacts inference performance. Therefore, it is evident that the dataset constructed in this study, LaionCele, holds substantial value and contribution to the field.
+        </p>
+    </div>
+
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>Application: making any U-net identity-aware.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./static/application.pdf" width=1200px height="100%" ></object>
+        <p class="text">
+            The proposed $$\mathcal N$$ Space for consistent ID generation is agnostic to the generative model and can be seamlessly integrated with any variant based on SDXL to achieve ID-consistent image generation.
+            This figure presents the consistent ID generation results with styleUnet.
+            The experimental outcomes indicate that the ``name'' sampled from the $$\mathcal N$$ Space can be easily utilized with alternative generative models to produce consistent ID generation without compromising the original specialized capabilities. 
+        </p>
+    </div>
+
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>The construction process of LaionCele dataset.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./sup/data_process.pdf" width=1200px height="100%" ></object>
+        <p class="text">
+            The construction of the LaionCele dataset represents one of the significant contributions of this paper, with the detailed construction process summarized in this figure.</p>
+    </div>
+
+    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+        <h2>Visualization supplement.</h2>
+      </div>
+      <div style="text-align: center; padding: 0; background-color: #fff;">
+        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
+        <object type="image/jpeg" data="./sup/custom.pdf" width=1200px height="100%" ></object>
+        <object type="image/jpeg" data="./sup/action_woman.pdf" width=1200px height="100%" ></object>
+        <object type="image/jpeg" data="./sup/action_man.pdf" width=1200px height="100%" ></object>
+        <object type="image/jpeg" data="./sup/emotion.pdf" width=1200px height="100%" ></object>
+        <object type="image/jpeg" data="./sup/style_sup.pdf" width=1200px height="100%" ></object>
+        <object type="image/jpeg" data="./sup/lora_laion.pdf" width=1200px height="100%" ></object>
+        <object type="image/jpeg" data="./sup/lora_web200.pdf" width=1200px height="100%" ></object>
+    </div>  
+
+    
+
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
