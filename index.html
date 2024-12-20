@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -58,8 +59,8 @@
     </div> 
     <div align="center" style="text-align: center; padding: 20px 100px; background-color: #fff;">
 <!--       <embed src="./static/figure1_final.pdf" type="application/pdf" width="100%" height="100%" internalinstanceid="81 /> -->
-      <object type="image/jpeg" data="./static/first_page.png" width=1200px height="100%" ></object>
-      <!-- <embed src="./static/first_page.pdf" type="application/pdf" width="1200px" height="100%" /> -->
+      <object type="image/jpeg" data="./static/first_page.png" width=800px height="100%" ></object>
+      <!-- <embed src="./static/first_page.pdf" type="application/pdf" width="800px" height="100%" /> -->
     </div>
 
     <div class="authors" style="text-align: center!important; font-family: 'Noto Sans', sans-serif; margin:30px">
@@ -119,97 +120,114 @@ Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of 
     </div>
 
 
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>Overview of the Proposed Method.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/freamwork2.png" width=1200px height="100%" ></object>
-        <p class="text">
-            Overview of the Proposed Method. 
-  (a) Dataset Construction. Celebrity images and their corresponding names were extracted from the Laion5b dataset, with name embeddings generated through a text encoder $E_{text}$ based on the names. 
-  (b) Image Encoder Architecture and Training. Features were extracted from input images using two CLIP image encoders, followed by a three-layer fully connected network to produce the ``name'' prediction. Mean Squared Error (MSE) loss was computed against the ground truth name embedding $F_{ID}^{gt}$. 
-  (c) Pipeline Inference. The name embedding predicted by the image encoders $E_{image}$ were combined with the original text embeddings by ``name'' Prepending ($NP(\cdot)$) to obtain final embeddings $F_{prompt}^{ID}$. These embeddings were then used to guide a U-net model for denoising. 
-  (d) ``Name'' Integrating. There is no need to set a specific placeholder or identify its position, simply inserting the name embedding between the start token(red block) 
-  and the first semantic token(blue block) is sufficient to achieve consistent identity generation. 
-  The padding tokens(yellow block) exceeding the length of 77 will be discarded. 
+    </div>
+    
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/freamwork2.png" width=800px height="100%"></object>
+        <p style="text-align: left">
+            Overview of the Proposed Method.  (a) Dataset Construction. Celebrity images and their corresponding names were extracted from the Laion5b dataset, with name embeddings generated through a text encoder $E_{text}$ based on the names. 
+            (b) Image Encoder Architecture and Training. Features were extracted from input images using two CLIP image encoders, followed by a three-layer fully connected network to produce the ``name'' prediction. Mean Squared Error (MSE) loss was computed against the ground truth name embedding $F_{ID}^{gt}$. 
+            (c) Pipeline Inference. The name embedding predicted by the image encoders $E_{image}$ were combined with the original text embeddings by ``name'' Prepending ($NP(\cdot)$) to obtain final embeddings $F_{prompt}^{ID}$. These embeddings were then used to guide a U-net model for denoising. 
+            (d) ``Name'' Integrating. There is no need to set a specific placeholder or identify its position, simply inserting the name embedding between the start token(red block) 
+            and the first semantic token(blue block) is sufficient to achieve consistent identity generation. The padding tokens(yellow block) exceeding the length of 77 will be discarded. 
         </p>
     </div>
 
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>Visualization and Comparison.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/main_results.png" width=1200px height="100%" ></object>
-        <p class="text">
+    </div>
+    
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/main_results.png" width=800px height="100%"></object>
+        <p style="text-align: left">
             Visualization and Comparison.The results concludes four tasks, i.e., scene construction, stylization, action control and emotional editing. 
             Please devote attention to semantic consistency and visual aesthetics of images with the same level of concern as given to ID consistency.
             The results demonstrate that our approach maintains ID consistency while perfectly preserving the original semantic performance (complex semantic consistency) of the generator(SDXL), a feat not achieved by other works.
         </p>
     </div>
 
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>Create Fictional Identities.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/chazhi.png" width=1200px height="100%" ></object>
-        <p class="text">
+    </div>
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/chazhi.png" width=600px height="100%"></object>
+        <p style="text-align: left">
             In the  $\mathcal N$  space, any given point corresponds to a person identity. For real individuals, we can obtain their mapping in the $\mathcal N$ space using the image encoder proposed and trained in this paper, thereby achieving consistent identity generation. Furthermore, by interpolating between any two points (i.e., name embedding) within the name space, we can create new fictional characters.
         </p>
     </div>
 
 
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>The necessity of constructing LaionCele datasets.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/dataset.png" width=1200px height="100%" ></object>
-        <p class="text">
+    </div>
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/dataset.png" width=600px height="100%"></object>
+        <p style="text-align: left">
             The results indicate that, on one hand, even well-performing generative models like SDXL exhibit a significant gap between their image outputs and real images. On the other hand, the gap between real test images and generated training images also impacts inference performance. Therefore, it is evident that the dataset constructed in this study, LaionCele, holds substantial value and contribution to the field.
         </p>
     </div>
 
-
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>Application: making any U-net identity-aware.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/application.png" width=1200px height="100%" ></object>
-        <p class="text">
+    </div>
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/application.png" width=600px height="100%"></object>
+        <p style="text-align: left">
             The proposed $\mathcal N$ Space for consistent ID generation is agnostic to the generative model and can be seamlessly integrated with any variant based on SDXL to achieve ID-consistent image generation.
             This figure presents the consistent ID generation results with styleUnet.
             The experimental outcomes indicate that the ``name'' sampled from the $\mathcal N$ Space can be easily utilized with alternative generative models to produce consistent ID generation without compromising the original specialized capabilities. 
         </p>
     </div>
 
-
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>The construction process of LaionCele dataset.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/data_process.png" width=1200px height="100%" ></object>
-        <p class="text">
-            The construction of the LaionCele dataset represents one of the significant contributions of this paper, with the detailed construction process summarized in this figure.</p>
+    </div>
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/data_process.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The construction of the LaionCele dataset represents one of the significant contributions of this paper, with the detailed construction process summarized in this figure.
+        </p>
     </div>
 
-    <div style="padding: 50px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
+
+    <div class="split" style="padding: 5px;background-color: rgb(230, 230, 230);color:black; text-align: center;">
         <h2>Visualization supplement.</h2>
-      </div>
-      <div style="text-align: center; padding: 0; background-color: #fff;">
-        <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
-        <object type="image/jpeg" data="./static/custom.png" width=1200px height="100%" ></object>
-        <object type="image/jpeg" data="./static/action_woman.png" width=1200px height="100%" ></object>
-        <object type="image/jpeg" data="./static/action_man.png" width=1200px height="100%" ></object>
-        <object type="image/jpeg" data="./static/emotion.png" width=1200px height="100%" ></object>
-        <object type="image/jpeg" data="./static/style_sup.png" width=1200px height="100%" ></object>
-        <object type="image/jpeg" data="./static/lora_laion.png" width=1200px height="100%" ></object>
-        <object type="image/jpeg" data="./static/lora_web200.png" width=1200px height="100%" ></object>
-    </div>  
+    </div>
+    <div style="text-align: center; padding:50px 100px; background-color: #fff; font-size:20px; margin-left: auto; margin-right: auto;width: 1200px">
+        <!-- <h3 style="text-align: center;"></h5> -->
+        <object type="image/jpeg" data="./static/custom.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            This figure demonstrates the identity and semantic consistency of our work in the decorative generation tasks.
+        </p>
+        <object type="image/jpeg" data="./static/action_woman.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The supplementary cases demonstrating ID consistency and semantic consistency in the action control generation tasks. </p>
+        <object type="image/jpeg" data="./static/action_man.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The supplementary cases demonstrating ID consistency and semantic consistency in the action control generation tasks.</p>
+        <object type="image/jpeg" data="./static/emotion.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The supplementary cases demonstrating ID consistency and semantic consistency in the emotional editing tasks.</p>
+        <object type="image/jpeg" data="./static/style_sup.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The supplementary cases demonstrating ID consistency and semantic consistency in the stylization generation tasks. </p>
+        <object type="image/jpeg" data="./static/lora_laion.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The experimental data presented in Table 2 of the main text indicate that fine-tuning enhances generative ID consistency. Here, we demonstrate the effects of fine-tuning LoRA on the LaionCele dataset using our approach.</p>
+        <object type="image/jpeg" data="./static/lora_web200.png" width=600px height="100%"></object>
+        <p style="text-align: left">
+            The experimental data presented in Table 2 of the main text indicate that fine-tuning enhances generative ID consistency. Here, we demonstrate the effects of fine-tuning LoRA on the LaionCele dataset using our approach.</p>
+        </p>
+    </div>
 
     
 
