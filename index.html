@@ -54,7 +54,7 @@
       <p style="padding-bottom: 5px;">Jing Zhao<sup>1</sup> , Heliang Zheng<sup>3</sup>, Chaoyue Wang<sup>4</sup>, Long Lan<sup>1</sup>,Wanrong Huang<sup>1</sup>, Yuhua Tang<sup>2†</sup></p>
       <p class="smaller">Department of Intelligent Data Science, College of Computer Science，National University of Defense Technology, China<sup>1</sup></p>
       <p class="smaller">HPCL,College of Computer Science, National University of Defense Technology, China<sup>2</sup></p>
-      <p class="smaller">National University of Defense Technology<sup>3</sup></p>
+      <p class="smaller">University of Science and Technology of China<sup>3</sup></p>
       <p class="smaller">University of Sydney<sup>4</sup></p>
     </div> 
     <div align="center" style="text-align: center; padding: 20px 100px; background-color: #fff;">
@@ -126,9 +126,9 @@ Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of 
         <object type="image/jpeg" data="./static/first_page.pdf" width=1200px height="100%" ></object>
         <p class="text">
             Overview of the Proposed Method. 
-  (a) Dataset Construction. Celebrity images and their corresponding names were extracted from the Laion5b dataset, with name embeddings generated through a text encoder $$E_{text}$$ based on the names. 
-  (b) Image Encoder Architecture and Training. Features were extracted from input images using two CLIP image encoders, followed by a three-layer fully connected network to produce the ``name'' prediction. Mean Squared Error (MSE) loss was computed against the ground truth name embedding $$F_{ID}^{gt}$$. 
-  (c) Pipeline Inference. The name embedding predicted by the image encoders $$E_{image}$$ were combined with the original text embeddings by ``name'' Prepending ($$NP(\cdot)$$) to obtain final embeddings $$F_{prompt}^{ID}$$. These embeddings were then used to guide a U-net model for denoising. 
+  (a) Dataset Construction. Celebrity images and their corresponding names were extracted from the Laion5b dataset, with name embeddings generated through a text encoder $E_{text}$ based on the names. 
+  (b) Image Encoder Architecture and Training. Features were extracted from input images using two CLIP image encoders, followed by a three-layer fully connected network to produce the ``name'' prediction. Mean Squared Error (MSE) loss was computed against the ground truth name embedding $F_{ID}^{gt}$. 
+  (c) Pipeline Inference. The name embedding predicted by the image encoders $E_{image}$ were combined with the original text embeddings by ``name'' Prepending ($NP(\cdot)$) to obtain final embeddings $F_{prompt}^{ID}$. These embeddings were then used to guide a U-net model for denoising. 
   (d) ``Name'' Integrating. There is no need to set a specific placeholder or identify its position, simply inserting the name embedding between the start token(red block) 
   and the first semantic token(blue block) is sufficient to achieve consistent identity generation. 
   The padding tokens(yellow block) exceeding the length of 77 will be discarded. 
@@ -155,7 +155,7 @@ Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of 
         <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
         <object type="image/jpeg" data="./static/chazhi.pdf" width=1200px height="100%" ></object>
         <p class="text">
-            In the  $$\mathcal N$$  space, any given point corresponds to a person identity. For real individuals, we can obtain their mapping in the $$\mathcal N$$ space using the image encoder proposed and trained in this paper, thereby achieving consistent identity generation. Furthermore, by interpolating between any two points (i.e., name embedding) within the name space, we can create new fictional characters.
+            In the  $\mathcal N$  space, any given point corresponds to a person identity. For real individuals, we can obtain their mapping in the $\mathcal N$ space using the image encoder proposed and trained in this paper, thereby achieving consistent identity generation. Furthermore, by interpolating between any two points (i.e., name embedding) within the name space, we can create new fictional characters.
         </p>
     </div>
 
@@ -179,9 +179,9 @@ Large-scale text-to-image diffusion models, (e.g., DALL-E, SDXL) are capable of 
         <!-- <video autoplay loop muted style="max-width: 60vw;"><source type="video/mp4" src="./static/car_show3.mp4"></video> -->
         <object type="image/jpeg" data="./static/application.pdf" width=1200px height="100%" ></object>
         <p class="text">
-            The proposed $$\mathcal N$$ Space for consistent ID generation is agnostic to the generative model and can be seamlessly integrated with any variant based on SDXL to achieve ID-consistent image generation.
+            The proposed $\mathcal N$ Space for consistent ID generation is agnostic to the generative model and can be seamlessly integrated with any variant based on SDXL to achieve ID-consistent image generation.
             This figure presents the consistent ID generation results with styleUnet.
-            The experimental outcomes indicate that the ``name'' sampled from the $$\mathcal N$$ Space can be easily utilized with alternative generative models to produce consistent ID generation without compromising the original specialized capabilities. 
+            The experimental outcomes indicate that the ``name'' sampled from the $\mathcal N$ Space can be easily utilized with alternative generative models to produce consistent ID generation without compromising the original specialized capabilities. 
         </p>
     </div>
 
